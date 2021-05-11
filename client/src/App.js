@@ -28,7 +28,7 @@ class App extends Component {
       .then(() => {
         axios
           .get(
-            "http://api.coinlayer.com/list?access_key=310b29a1427b806043e3e2f98bb0372d"
+            "https://api.coinlayer.com/list?access_key=310b29a1427b806043e3e2f98bb0372d"
           )
           .then((res) => {
             let obj = res.data.crypto;
