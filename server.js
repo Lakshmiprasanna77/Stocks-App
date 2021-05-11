@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../build")));
 app.get("/", function (req, res) {
-  return <h1>hello world</h1>;
+  res.send("successfully lanuched");
 });
 app.get("/stocks", function (req, res) {
   dbo
