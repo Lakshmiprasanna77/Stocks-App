@@ -26,6 +26,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../build")));
+app.get("/", function (req, res) {
+  return <h1>hello world</h1>;
+});
 app.get("/stocks", function (req, res) {
   dbo
     .collection("stocks")
