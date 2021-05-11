@@ -31,7 +31,7 @@ const Posts = ({ view, stocks, loading, updateToView, deleteStock }) => {
       className="table table-striped mt-4"
     >
       <thead>
-        <tr>
+        <tr className="bg-primary">
           <th>Company name</th>
           <th>Symbol</th>
           <th>Max_Supply</th>

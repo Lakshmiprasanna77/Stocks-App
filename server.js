@@ -26,9 +26,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "client/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
+
 app.get("/stocks", function (req, res) {
   dbo
     .collection("stocks")
@@ -54,14 +52,14 @@ app.post("/insert", function (req, res) {
   );
   console.log("hello");
 });
-app.delete("/delete", function (req, res) {
+app.delete("/stockdelete", function (req, res) {
   console.log(req.body);
   dbo
     .collection("stocks")
     .findOne({ name: req.body.name })
-    .then((res) => {
-      console.log(res);
-      dbo.collection("stocks").remove(res, function (err, records) {
+    .then((result) => {
+      console.log(result);
+      dbo.collection("stocks").remove(result, function (err, records) {
         if (err) {
           console.log("Error" + err);
         } else {

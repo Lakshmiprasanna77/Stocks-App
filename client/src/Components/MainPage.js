@@ -70,7 +70,7 @@ class MainPage extends Component {
     }
   };
   deleteStock = (name) => {
-    axios.delete("/delete", { data: { name: name } }).then(() => {
+    axios.delete("/stockdelete", { data: { name: name } }).then(() => {
       var currentStocks = [...this.state.currentStocks];
       var removeIndex = currentStocks
         .map(function (item) {
@@ -93,12 +93,18 @@ class MainPage extends Component {
 
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav
+          className="navbar navbar-expand-lg navbar-light bg-light"
+          style={{ height: "80px" }}
+        >
           <div className="d-flex">
-            <h2>Crypto Currency App</h2>
-            <form className="d-flex  float-left">
+            <div>
+              <h2>Crypto Currency App</h2>
+            </div>
+            <form className="d-flex" style={{ marginLeft: "1200px" }}>
               <input
-                className="mr-6 form-control me-2"
+                className=" mr-6 form-control  me-2 "
+                style={{ height: "50px", width: "230px" }}
                 placeholder="search"
                 onChange={this.inputchange}
               ></input>
@@ -106,7 +112,7 @@ class MainPage extends Component {
                 onClick={(e) => {
                   this.search(e);
                 }}
-                className="btn btn-outline-success "
+                className="btn btn-outline-success"
                 type="button"
               >
                 search
