@@ -25,7 +25,7 @@ MongoClient.connect(connectionString, { useNewUrlParser: true })
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, ".client/build")));
 app.get("/", function (req, res) {
   res.send("successfully lanuched");
 });
